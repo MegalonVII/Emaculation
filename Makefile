@@ -19,44 +19,44 @@ clean:
 	rm -rf ~/Applications/Emulators/*
 
 ryujinx:
-	chmod +x ryujinx_downloader.sh
-	./ryujinx_downloader.sh
+	chmod +x ./Scripts/ryujinx_downloader.sh
+	./Scripts/ryujinx_downloader.sh
 
 melonds:
-	chmod +x melonds_downloader.sh
-	./melonds_downloader.sh
+	chmod +x ./Scripts/melonds_downloader.sh
+	./Scripts/melonds_downloader.sh
 
 cemu:
-	chmod +x cemu_downloader.sh
-	./cemu_downloader.sh
+	chmod +x ./Scripts/cemu_downloader.sh
+	./Scripts/cemu_downloader.sh
 
 mgba:
-	chmod +x mgba_downloader.sh
-	./mgba_downloader.sh
+	chmod +x ./Scripts/mgba_downloader.sh
+	./Scripts/mgba_downloader.sh
 
 ppsspp:
-	chmod +x ppsspp_downloader.sh
-	./ppsspp_downloader.sh
+	chmod +x ./Scripts/ppsspp_downloader.sh
+	./Scripts/ppsspp_downloader.sh
 
 duckstation:
-	chmod +x duckstation_downloader.sh
-	./duckstation_downloader.sh
+	chmod +x ./Scripts/duckstation_downloader.sh
+	./Scripts/duckstation_downloader.sh
 
 pcsx2:
-	chmod +x pcsx2_downloader.sh
-	./pcsx2_downloader.sh
+	chmod +x ./Scripts/pcsx2_downloader.sh
+	./Scripts/pcsx2_downloader.sh
 
 dolphin:
-	chmod +x dolphin_downloader.sh
-	./dolphin_downloader.sh
+	chmod +x ./Scripts/dolphin_downloader.sh
+	./Scripts/dolphin_downloader.sh
 
 rpcs3:
-	chmod +x rpcs3_downloader.sh
-	./rpcs3_downloader.sh
+	chmod +x ./Scripts/rpcs3_downloader.sh
+	./Scripts/rpcs3_downloader.sh
 
 snes9x:
-	chmod +x snes9x_downloader.sh
-	./snes9x_downloader.sh
+	chmod +x ./Scripts/snes9x_downloader.sh
+	./Scripts/snes9x_downloader.sh
 
 remove-ryujinx:
 	rm -rf ~/Applications/Emulators/Ryujinx.app
