@@ -11,6 +11,7 @@ all:
 	make dolphin
 	make rpcs3
 	make snes9x
+	make azahar
 	echo
 	echo "All Emulators downloaded."
 	echo
@@ -58,6 +59,10 @@ snes9x:
 	chmod +x ./Scripts/snes9x_downloader.sh
 	./Scripts/snes9x_downloader.sh
 
+azahar:
+	chmod +x ./Scripts/azahar_downloader.sh
+	./Scripts/azahar_downloader.sh
+
 remove-ryujinx:
 	rm -rf ~/Applications/Emulators/Ryujinx.app
 
@@ -87,6 +92,9 @@ remove-rpcs3:
 
 remove-snes9x:
 	rm -rf ~/Applications/Emulators/Snes9x.app
+
+remove-azahar:
+	rm -rf ~/Applications/Emulators/Azahar.app
 
 update:
 	make clean
@@ -131,3 +139,7 @@ update-rpcs3:
 update-snes9x:
 	make remove-snes9x
 	make snes9x
+
+update-azahar:
+	make remove-azahar
+	make azahar
