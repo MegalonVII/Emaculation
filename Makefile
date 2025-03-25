@@ -10,6 +10,7 @@ install: ensure
 	@$(MAKE) duckstation
 	@$(MAKE) melonds
 	@$(MAKE) mgba
+	@$(MAKE) pegasus
 	@$(MAKE) pcsx2
 	@$(MAKE) ppsspp
 	@$(MAKE) rpcs3
@@ -69,6 +70,9 @@ melonds:
 
 mgba:
 	@chmod +x ./Downloaders/mgba_downloader.sh && ./Downloaders/mgba_downloader.sh
+
+pegasus:
+	@chmod +x ./Downloaders/pegasus_downloader.sh && ./Downloaders/pegasus_downloader.sh
 
 pcsx2:
 	@chmod +x ./Downloaders/pcsx2_downloader.sh && ./Downloaders/pcsx2_downloader.sh
@@ -130,6 +134,13 @@ remove-mgba:
 	@echo "Uninstalling mGBA..."
 	@rm -rf /Applications/Emulators/mGBA.app
 	@echo "mGBA uninstalled."
+	@echo
+
+remove-pegasus:
+	@echo
+	@echo "Uninstalling Pegasus..."
+	@rm -rf /Applications/Pegasus.app
+	@echo "Pegasus uninstalled."
 	@echo
 
 remove-pcsx2:
@@ -223,6 +234,14 @@ update-mgba:
 	@make remove-mgba >/dev/null 2>&1
 	@make mgba >/dev/null 2>&1
 	@echo "mGBA updated."
+	@echo
+
+update-pegasus:
+	@echo
+	@echo "Updating Pegasus..."
+	@make remove-pegasus >/dev/null 2>&1
+	@make pegasus >/dev/null 2>&1
+	@echo "Pegasus updated."
 	@echo
 
 update-pcsx2:
