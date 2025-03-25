@@ -19,9 +19,7 @@ And more to come that I'm not thinking of at the moment! Remember, if you have a
 This is only now just getting started, so there are no current plans for a release `.app` file. However, eventually I would like to make one that would make this process more GUI based for ease of use. For the time being here are some instructions to get started.
 
 ```
-git clone https://github.com/MegalonVII/Emaculation.git
-cd Emaculation
-make
+bash <(curl -sL https://raw.githubusercontent.com/MegalonVII/Emaculation/main/setup.sh)
 ```
 
 ### Reach Out To Me!
