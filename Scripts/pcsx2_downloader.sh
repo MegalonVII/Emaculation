@@ -27,7 +27,7 @@ fi
 
 # Extract the tar.xz file
 cd "$DEST_DIR" || exit 1
-tar -xvf PCSX2-macos-latest.tar.xz
+tar -xvf PCSX2-macos-latest.tar.xz >/dev/null 2>&1
 
 # Remove the tar.gz file
 rm -f PCSX2-macos-latest.tar.xz

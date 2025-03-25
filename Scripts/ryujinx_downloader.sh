@@ -27,7 +27,7 @@ fi
 
 # Extract the tar.gz file
 cd "$DEST_DIR" || exit 1
-tar -xvf Ryujinx-macos-latest.tar.gz
+tar -xvf Ryujinx-macos-latest.tar.gz >/dev/null 2>&1
 
 # Remove the tar.gz file
 rm -f Ryujinx-macos-latest.tar.gz
