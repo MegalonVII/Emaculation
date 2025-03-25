@@ -2,17 +2,27 @@
 
 ## MacOS emulator configurator to transform your Mac into an emulation powerhouse!
 
-This is a (WIP) series of Shell scripts which allows for a newbie at emulation on MacOS to transform their Mac into a capable machine for a emulation console. **Currently, this is only just roughly starting; contributions are very much welcome!**
+This is a (WIP) series of Shell scripts which allows for anyone, be they brand new to the concept of emulation or someone who just doesn't want to spend more time on configurations, on MacOS to transform their *brand new* Mac into a capable machine for a emulation console. This assumes that you have never configured anything related to emulation on your device before. **Currently, this is only just roughly starting; contributions are very much welcome!**
 
 ### Ideas To Implement
 
-1. A proper frontend, maybe either [ES-DE](https://github.com/Aloshi/EmulationStation) or [Pegasus](https://github.com/mmatyas/pegasus-frontend). Should have ability to switch between it and MacOS desktop and vice versa, much like how the Steam Deck does.
+1. A proper frontend, maybe either [ES-DE](https://es-de.org) or [Pegasus](https://pegasus-frontend.org/). Should have ability to switch between it and MacOS desktop and vice versa, much like how the Steam Deck does.
 2. More emulators, including but not limited to NES, N64, and anything Xbox. Would prefer **NOT** to use RetroArch or other core-based emulators, as I think they are very bloated and the cores are not often updated fast enough compared to their standalone counterparts.
 3. Automatic configurations for each emulator.
 4. Giving users access to the contents of the `~/Library/Application Support/` folder in which the emulators store their configurations. This is to upload any BIOS files or system firmware/keys they need to use with the emulator.
 5. A "drag and drop" system to store their ROMs in, so that after doing so they appear in the frontend.
 
-And more to come that I'm not thinking of at the moment! Remember, if you have any ideas, feel free to contribute! 
+And more to come that I'm not thinking of at the moment! Remember, if you have any ideas, feel free to contribute!
+
+### Getting Started!
+
+This is only now just getting started, so there is no current plans for a release `.app` file. However, eventually I would like to make one that would make this process more GUI based for ease of use. For the time being here are some instructions to get started.
+
+```
+git clone https://github.com/MegalonVII/Emaculation.git
+cd Emaculation
+make
+```
 
 ### Reach Out To Me!
 
