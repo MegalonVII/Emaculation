@@ -9,7 +9,7 @@ if [[ -z "$url" ]]; then
     exit 1
 fi
 
-DEST_DIR="$HOME/Applications/Emulators"
+DEST_DIR="/Applications/Emulators"
 mkdir -p "$DEST_DIR"
 
 # Download the latest release

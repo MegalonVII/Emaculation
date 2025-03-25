@@ -4,6 +4,7 @@ install: ensure
 	@echo "Downloading all emulators..."
 	@echo
 	@$(MAKE) azahar
+	@$(MAKE) bsnes
 	@$(MAKE) cemu
 	@$(MAKE) dolphin
 	@$(MAKE) duckstation
@@ -13,7 +14,6 @@ install: ensure
 	@$(MAKE) ppsspp
 	@$(MAKE) rpcs3
 	@$(MAKE) ryujinx
-	@$(MAKE) snes9x
 	@echo
 	@echo "All emulators downloaded."
 	@echo
@@ -22,21 +22,41 @@ install: ensure
 uninstall:
 	@echo
 	@echo "Uninstalling emulators..."
-	@rm -rf ~/Applications/Emulators/*
+	@rm -rf /Applications/Emulators/*
 	@echo "Emulators uninstalled."
 	@echo
 
 ensure:
+	@if [ ! -d "~/Documents/ROMs" ]; then \
+		echo; \
+		echo "Setting directories..."
+		git clone --filter=blob:none --sparse https://github.com/MegalonVII/Emaculation.git; \
+		cd Emaculation; \
+		git sparse-checkout set ROMs; \
+		mv ROMs "~/Documents/"; \
+		cd ..; \
+		rm -rf Emaculation; \
+		echo "Directories set."; \
+		echo; \
+	fi
+
+	@echo
+	@echo "Installing dependencies..."
 	@if ! command -v brew &> /dev/null; then \
 		/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" >/dev/null 2>&1; \
 	fi
 	@if ! brew list jq &>/dev/null; then \
 		brew install jq >/dev/null 2>&1; \
 	fi
+	@echo "Dependencies installed."
+	@echo
 
 # emulator downloaders
 azahar:
 	@chmod +x ./Scripts/azahar_downloader.sh && ./Scripts/azahar_downloader.sh
+
+bsnes:
+	@chmod +x ./Scripts/bsnes_downloader.sh && ./Scripts/bsnes_downloader.sh
 
 cemu:
 	@chmod +x ./Scripts/cemu_downloader.sh && ./Scripts/cemu_downloader.sh
@@ -65,85 +85,82 @@ rpcs3:
 ryujinx:
 	@chmod +x ./Scripts/ryujinx_downloader.sh && ./Scripts/ryujinx_downloader.sh
 
-snes9x:
-	@chmod +x ./Scripts/snes9x_downloader.sh && ./Scripts/snes9x_downloader.sh
-
 # emulator removers
 remove-azahar:
 	@echo
 	@echo "Uninstalling Azahar..."
-	@rm -rf ~/Applications/Emulators/Azahar.app
+	@rm -rf /Applications/Emulators/Azahar.app
 	@echo "Azahar uninstalled."
+	@echo
+
+remove-bsnes:
+	@echo
+	@echo "Uninstalling bsnes..."
+	@rm -rf /Applications/Emulators/bsnes.app
+	@echo "bsnes uninstalled."
 	@echo
 
 remove-cemu:
 	@echo
 	@echo "Uninstalling Cemu..."
-	@rm -rf ~/Applications/Emulators/Cemu.app
+	@rm -rf /Applications/Emulators/Cemu.app
 	@echo "Cemu uninstalled."
 	@echo
 
 remove-dolphin:
 	@echo
 	@echo "Uninstalling Dolphin..."
-	@rm -rf ~/Applications/Emulators/Dolphin.app
+	@rm -rf /Applications/Emulators/Dolphin.app
 	@echo "Dolphin uninstalled."
 	@echo
 
 remove-duckstation:
 	@echo
 	@echo "Uninstalling DuckStation..."
-	@rm -rf ~/Applications/Emulators/DuckStation.app
+	@rm -rf /Applications/Emulators/DuckStation.app
 	@echo "DuckStation uninstalled."
 	@echo
 
 remove-melonDS:
 	@echo
 	@echo "Uninstalling melonDS..."
-	@rm -rf ~/Applications/Emulators/melonDS.app
+	@rm -rf /Applications/Emulators/melonDS.app
 	@echo "melonDS uninstalled."
 	@echo
 
 remove-mgba:
 	@echo
 	@echo "Uninstalling mGBA..."
-	@rm -rf ~/Applications/Emulators/mGBA.app
+	@rm -rf /Applications/Emulators/mGBA.app
 	@echo "mGBA uninstalled."
 	@echo
 
 remove-pcsx2:
 	@echo
 	@echo "Uninstalling PCSX2..."
-	@rm -rf ~/Applications/Emulators/PCSX2.app
+	@rm -rf /Applications/Emulators/PCSX2.app
 	@echo "PCSX2 uninstalled."
 	@echo
 
 remove-ppsspp:
 	@echo
 	@echo "Uninstalling PPSSPP..."
-	@rm -rf ~/Applications/Emulators/PPSSPP.app
+	@rm -rf /Applications/Emulators/PPSSPP.app
 	@echo "PPSSPP uninstalled."
 	@echo
 
 remove-rpcs3:
 	@echo
 	@echo "Uninstalling RPCS3..."
-	@rm -rf ~/Applications/Emulators/RPCS3.app
+	@rm -rf /Applications/Emulators/RPCS3.app
 	@echo "RPCS3 uninstalled."
 	@echo
 
 remove-ryujinx:
 	@echo
 	@echo "Uninstalling Ryujinx..."
-	@rm -rf ~/Applications/Emulators/Ryujinx.app
+	@rm -rf /Applications/Emulators/Ryujinx.app
 	@echo "Ryujinx uninstalled."
-	@echo
-
-remove-snes9x:
-	@echo
-	@echo "Uninstalling Snes9x..."
-	@rm -rf ~/Applications/Emulators/Snes9x.app
-	@echo "Snes9x uninstalled."
 	@echo
 
 # emulator updaters
@@ -161,6 +178,14 @@ update-azahar:
 	@make remove-azahar >/dev/null 2>&1
 	@make azahar >/dev/null 2>&1
 	@echo "Azahar updated."
+	@echo
+
+update-bsnes:
+	@echo
+	@echo "Updating bsnes..."
+	@make remove-bsnes >/dev/null 2>&1
+	@make bsnes >/dev/null 2>&1
+	@echo "bsnes updated."
 	@echo
 
 update-cemu:
@@ -233,12 +258,4 @@ update-ryujinx:
 	@make remove-ryujinx >/dev/null 2>&1
 	@make ryujinx >/dev/null 2>&1
 	@echo "Ryujinx updated."
-	@echo
-
-update-snes9x:
-	@echo
-	@echo "Updating Snes9x..."
-	@make remove-snes9x >/dev/null 2>&1
-	@make snes9x >/dev/null 2>&1
-	@echo "Snes9x updated."
 	@echo

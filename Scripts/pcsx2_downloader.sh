@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ensure the destination directory exists
-DEST_DIR="$HOME/Applications/Emulators"
+DEST_DIR="/Applications/Emulators"
 mkdir -p "$DEST_DIR"
 
 url=$(curl -s https://api.github.com/repos/PCSX2/pcsx2/releases/latest \
