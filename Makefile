@@ -27,19 +27,6 @@ uninstall:
 	@echo
 
 ensure:
-	@if [ ! -d "~/Documents/ROMs" ]; then \
-		echo; \
-		echo "Setting directories..."
-		git clone --filter=blob:none --sparse https://github.com/MegalonVII/Emaculation.git; \
-		cd Emaculation; \
-		git sparse-checkout set ROMs; \
-		mv ROMs "~/Documents/"; \
-		cd ..; \
-		rm -rf Emaculation; \
-		echo "Directories set."; \
-		echo; \
-	fi
-
 	@echo
 	@echo "Installing dependencies..."
 	@if ! command -v brew &> /dev/null; then \
@@ -51,39 +38,49 @@ ensure:
 	@echo "Dependencies installed."
 	@echo
 
+	@echo
+	@echo "Setting up directories..."
+	@if [ ! -d "$(HOME)/Documents/Emulation/" ]; then \
+		echo; \
+		echo "Setting directories..."; \
+		mkdir -p $(HOME)/Documents/Emulation
+	fi
+	@echo "Directories set."
+	@echo
+
 # emulator downloaders
 azahar:
-	@chmod +x ./Scripts/azahar_downloader.sh && ./Scripts/azahar_downloader.sh
+	@chmod +x ./Downloaders/azahar_downloader.sh && ./Downloaders/azahar_downloader.sh
 
 bsnes:
-	@chmod +x ./Scripts/bsnes_downloader.sh && ./Scripts/bsnes_downloader.sh
+	@chmod +x ./Downloaders/bsnes_downloader.sh && ./Downloaders/bsnes_downloader.sh
 
 cemu:
-	@chmod +x ./Scripts/cemu_downloader.sh && ./Scripts/cemu_downloader.sh
+	@chmod +x ./Downloaders/cemu_downloader.sh && ./Downloaders/cemu_downloader.sh
 
 dolphin:
-	@chmod +x ./Scripts/dolphin_downloader.sh && ./Scripts/dolphin_downloader.sh
+	@chmod +x ./Downloaders/dolphin_downloader.sh && ./Downloaders/dolphin_downloader.sh
 
 duckstation:
-	@chmod +x ./Scripts/duckstation_downloader.sh && ./Scripts/duckstation_downloader.sh
+	@chmod +x ./Downloaders/duckstation_downloader.sh && ./Downloaders/duckstation_downloader.sh
 
 melonds:
-	@chmod +x ./Scripts/melonds_downloader.sh && ./Scripts/melonds_downloader.sh
+	@chmod +x ./Downloaders/melonds_downloader.sh && ./Downloaders/melonds_downloader.sh
 
 mgba:
-	@chmod +x ./Scripts/mgba_downloader.sh && ./Scripts/mgba_downloader.sh
+	@chmod +x ./Downloaders/mgba_downloader.sh && ./Downloaders/mgba_downloader.sh
 
 pcsx2:
-	@chmod +x ./Scripts/pcsx2_downloader.sh && ./Scripts/pcsx2_downloader.sh
+	@chmod +x ./Downloaders/pcsx2_downloader.sh && ./Downloaders/pcsx2_downloader.sh
 
 ppsspp:
-	@chmod +x ./Scripts/ppsspp_downloader.sh && ./Scripts/ppsspp_downloader.sh
+	@chmod +x ./Downloaders/ppsspp_downloader.sh && ./Downloaders/ppsspp_downloader.sh
 
 rpcs3:
-	@chmod +x ./Scripts/rpcs3_downloader.sh && ./Scripts/rpcs3_downloader.sh
+	@chmod +x ./Downloaders/rpcs3_downloader.sh && ./Downloaders/rpcs3_downloader.sh
 
 ryujinx:
-	@chmod +x ./Scripts/ryujinx_downloader.sh && ./Scripts/ryujinx_downloader.sh
+	@chmod +x ./Downloaders/ryujinx_downloader.sh && ./Downloaders/ryujinx_downloader.sh
 
 # emulator removers
 remove-azahar:

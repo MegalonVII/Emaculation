@@ -16,7 +16,7 @@ And more to come that I'm not thinking of at the moment! Remember, if you have a
 
 ### Getting Started!
 
-This is only now just getting started, so there is no current plans for a release `.app` file. However, eventually I would like to make one that would make this process more GUI based for ease of use. For the time being here are some instructions to get started.
+This is only now just getting started, so there are no current plans for a release `.app` file. However, eventually I would like to make one that would make this process more GUI based for ease of use. For the time being here are some instructions to get started.
 
 ```
 git clone https://github.com/MegalonVII/Emaculation.git
