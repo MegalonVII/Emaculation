@@ -9,7 +9,7 @@ This is a (WIP) series of Shell scripts which allows for anyone, be they brand n
 1. A proper frontend, maybe either [ES-DE](https://es-de.org) or [Pegasus](https://pegasus-frontend.org/). Should have ability to switch between it and MacOS desktop and vice versa, much like how the Steam Deck does.
 2. More emulators, including but not limited to NES, N64, and anything Xbox. Would prefer **NOT** to use RetroArch or other core-based emulators, as I think they are very bloated and the cores are not often updated fast enough compared to their standalone counterparts.
 3. Automatic configurations for each emulator.
-4. Giving users access to the contents of the `~/Library/Application Support/` folder in which the emulators store their configurations. This is to upload any BIOS files or system firmware/keys they need to use with the emulator.
+4. Giving users (partial) access to the contents of the `~/Library/Application Support/` folder (or wherever else) in which the emulators store their configurations. This is to upload any BIOS files or system firmware/keys they need to use with the emulator.
 5. A "drag and drop" system to store their ROMs in, so that after doing so they appear in the frontend.
 
 And more to come that I'm not thinking of at the moment! Remember, if you have any ideas, feel free to contribute!
