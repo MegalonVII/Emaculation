@@ -1,0 +1,4 @@
+collection: Nintendo Game Boy
+shortname: gb
+extensions: bs, BS, cgb, CGB, dmg, DMG, gb, GB, gbc, GBC, sgb, SGB, sfc, SFC, smc, SMC, 7z, 7Z, zip, ZIP
+launch: /Applications/Emulators/mGBA.app -f {file.path}

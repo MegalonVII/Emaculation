@@ -1,0 +1,4 @@
+collection: Nintendo DS (melonDS)
+shortname: nds
+extensions: bin, BIN, nds, NDS, 7z, 7Z, zip, ZIP
+launch: /Applications/Emulators/melonDS.app -f {file.path}
