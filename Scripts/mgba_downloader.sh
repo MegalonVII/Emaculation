@@ -42,3 +42,4 @@ hdiutil detach "$volume" -quiet
 rm -f "$output_file"
 
 echo "Latest mGBA build downloaded."
+echo

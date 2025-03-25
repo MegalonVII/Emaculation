@@ -42,3 +42,4 @@ hdiutil detach "$volume" -quiet
 rm -f "$output_file"
 
 echo "Latest Dolphin build downloaded."
+echo
