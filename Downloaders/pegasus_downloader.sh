@@ -33,7 +33,7 @@ unzip Pegasus-macos-latest.zip > /dev/null 2>&1
 rm -f Pegasus-macos-latest.zip
 
 # Move binary
-mv Pegasus.app ..
+mv Pegasus.app .. > /dev/null 2>&1
 rm -rf *.md
 
 # Done
