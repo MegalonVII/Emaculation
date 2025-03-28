@@ -13,7 +13,7 @@ while true; do
 done
 
 for program in "${programs[@]}"; do
-    rm -rf /Applications/"$program"
+    rm -rf "/Applications/${program}.app"
 done
 rm -rf ~/Library/Preferences/pegasus-frontend
 
