@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ensure the destination directory exists
-DEST_DIR="/Applications/Emulators"
+DEST_DIR="/Applications"
 mkdir -p "$DEST_DIR"
 
 url=$(curl -s https://api.github.com/repos/mmatyas/pegasus-frontend/releases/latest \

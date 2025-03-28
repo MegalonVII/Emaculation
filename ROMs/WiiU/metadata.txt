@@ -1,4 +1,4 @@
 collection: Nintendo Wii U
 shortname: wiiu
 extensions: elf, ELF, rpx, RPX, tmd, TMD, wua, WUA, wud, WUD, wuhb, WUHB, wux, WUX
-launch: /Applications/Emulators/Cemu.app -f -g {file.path}
+launch: /Applications/Cemu.app -f -g {file.path}

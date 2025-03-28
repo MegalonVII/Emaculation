@@ -1,4 +1,4 @@
 collection: Sony PlayStation 3
 shortname: ps3
 extensions: desktop, DESKTOP, ps3, BIN, bin
-launch: /Applications/Emulators/RPCS3.app {file.path}
+launch: /Applications/RPCS3.app {file.path}

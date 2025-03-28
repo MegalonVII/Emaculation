@@ -1,4 +1,4 @@
 collection: Nintendo GameCube
 shortname: gc
 extensions: gcm, GCM, iso, ISO, wbfs, WBFS, wia, WIA, ciso, CISO, gcz, GCZ, elf, ELF, dol, DOL, dff, DFF, json, JSON, rvz, RVZ, tgc, TGC, wad, WAD, m3u, M3U
-launch: /Applications/Emulators/Dolphin.app -b -e {file.path}
+launch: /Applications/Dolphin.app -b -e {file.path}
