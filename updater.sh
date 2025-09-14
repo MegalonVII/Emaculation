@@ -6,11 +6,7 @@ raw_repo_url="https://raw.githubusercontent.com/MegalonVII/Emaculation/main"
 
 # Loop to remove apps
 for name in "${raw_program_names[@]}"; do
-    if [[ "$name" == "Pegasus" ]]; then
-        rm -rf "/Applications/Pegasus.app"
-    else
-        rm -rf "/Applications/Emulators/${name}.app"
-    fi
+    rm -rf "/Applications/${name}.app"
 done
 
 # Loop to update programs

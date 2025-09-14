@@ -4,8 +4,10 @@
 DEST_DIR="/Applications"
 mkdir -p "$DEST_DIR"
 
-url=$(curl -s https://api.github.com/repos/Ryubing/Stable-Releases/releases/latest \
-    | jq -r '.assets[] | select(.name | contains("macos_universal.app")) | .browser_download_url')
+# Get URL
+url_for_version=$(curl -Ls -o /dev/null -w %{url_effective} https://update.ryujinx.app/latest)
+version=$(basename "$url_for_version")
+url="https://git.ryujinx.app/api/v4/projects/1/packages/generic/Ryubing/$version/ryujinx-$version-macos_universal.app.tar.gz"
 
 # Check if URL was fetched correctly
 if [[ -z "$url" ]]; then
