@@ -5,7 +5,7 @@ DEST_DIR="/Applications"
 mkdir -p "$DEST_DIR"
 
 url=$(curl -s https://api.github.com/repos/azahar-emu/azahar/releases/latest \
-    | jq -r '.assets[] | select(.name | contains("macos")) | .browser_download_url')
+    | jq -r '.assets[] | select(.name | contains("macos-${uname -m}")) | .browser_download_url')
 
 # Check if URL was fetched correctly
 if [[ -z "$url" ]]; then
