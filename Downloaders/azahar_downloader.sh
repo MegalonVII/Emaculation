@@ -4,8 +4,15 @@
 DEST_DIR="/Applications"
 mkdir -p "$DEST_DIR"
 
-url=$(curl -s https://api.github.com/repos/azahar-emu/azahar/releases/latest \
-    | jq -r '.assets[] | select(.name | contains("macos-${uname -m}")) | .browser_download_url')
+arch=$(uname -m)
+
+if [[ $arch=="arm64" ]]; then
+    url=$(curl -s https://api.github.com/repos/azahar-emu/azahar/releases/latest \
+        | jq -r '.assets[] | select(.name | contains("macos-arm64")) | .browser_download_url')
+elif [[ $arch=="x86_64" ]]; then
+    url=$(curl -s https://api.github.com/repos/azahar-emu/azahar/releases/latest \
+        | jq -r '.assets[] | select(.name | contains("macos-x86_64")) | .browser_download_url')
+fi
 
 # Check if URL was fetched correctly
 if [[ -z "$url" ]]; then
